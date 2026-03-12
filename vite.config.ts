@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/masterclass/", // This ensures the app resolves assets in the correct subdirectory
+  base: "/",
   server: {
     host: "::",
     port: 8080,
