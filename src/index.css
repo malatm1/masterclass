@@ -109,3 +109,48 @@
     font-family: 'JetBrains Mono', monospace;
   }
 }
+
+/* War Room tactical overlays */
+.war-room-grid {
+  background-image:
+    linear-gradient(rgba(217, 119, 6, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 119, 6, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.war-room-scanline {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(217, 119, 6, 0.015) 2px,
+    rgba(217, 119, 6, 0.015) 4px
+  );
+  animation: scanline-drift 8s linear infinite;
+}
+
+@keyframes scanline-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+@keyframes sweep-glow {
+  0%, 100% { opacity: 0; transform: translateY(-100%); }
+  50% { opacity: 1; transform: translateY(100%); }
+}
+
+.war-room-sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(217, 119, 6, 0.03) 45%,
+    rgba(217, 119, 6, 0.06) 50%,
+    rgba(217, 119, 6, 0.03) 55%,
+    transparent 100%
+  );
+  animation: sweep-glow 6s ease-in-out infinite;
+  pointer-events: none;
+}

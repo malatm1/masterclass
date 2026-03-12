@@ -822,22 +822,27 @@ export default function SupplyChainMasterclass() {
       return (
         <div className="space-y-6">
           {/* Hero banner */}
-          <div className="rounded-lg p-6" style={{ background: C.purple, border: `1px solid ${C.grey200}` }}>
-            <p className="text-xs font-mono uppercase tracking-widest mb-1" style={{ color: C.crimson }}>MBA Masterclass</p>
-            <h1 className="text-3xl font-mono font-black mb-2" style={{ color: C.white }}>
-              Supply Chain<br />Analytics
-            </h1>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: C.grey400 }}>
-              A full-day immersive session guiding you from data theory to AI-powered decision making.
-              No coding. Just business intelligence.
-            </p>
-            <div className="flex items-center gap-4 flex-wrap">
-              {["📅 09:00 – 16:00", "✅ SO 05 aligned", `⚡ ${filledInsights}/4 insights saved`].map(label => (
-                <div key={label} className="rounded-lg px-4 py-2 text-sm font-mono"
-                  style={{ background: "rgba(217,119,6,0.1)", border: `1px solid ${C.crimson}`, color: C.crimson }}>
-                  <span className="font-bold">{label}</span>
-                </div>
-              ))}
+          <div className="rounded-lg relative overflow-hidden war-room-sweep" style={{ background: C.purple, border: `1px solid ${C.grey200}` }}>
+            {/* Tactical grid + scanline overlays */}
+            <div className="absolute inset-0 war-room-grid pointer-events-none" />
+            <div className="absolute inset-0 war-room-scanline pointer-events-none" />
+            <div className="relative z-10 p-6">
+              <p className="text-xs font-mono uppercase tracking-widest mb-1" style={{ color: C.crimson }}>MBA Masterclass</p>
+              <h1 className="text-3xl font-mono font-black mb-2" style={{ color: C.white }}>
+                Supply Chain<br />Analytics
+              </h1>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: C.grey400 }}>
+                A full-day immersive session guiding you from data theory to AI-powered decision making.
+                No coding. Just business intelligence.
+              </p>
+              <div className="flex items-center gap-4 flex-wrap">
+                {["📅 09:00 – 16:00", "✅ SO 05 aligned", `⚡ ${filledInsights}/4 insights saved`].map(label => (
+                  <div key={label} className="rounded-lg px-4 py-2 text-sm font-mono"
+                    style={{ background: "rgba(217,119,6,0.1)", border: `1px solid ${C.crimson}`, color: C.crimson }}>
+                    <span className="font-bold">{label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
